@@ -1,4 +1,4 @@
-# Air-Quality-Monitoring-Using-IOY
+# Air-Quality-Monitoring-Using-IOT
 # Air Quality Monitoring IoT Project
 
 ## Overview
