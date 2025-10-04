@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "PASKAL GARRY VINU F",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 28.8, "left": 321.64, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -76.5, "left": 618.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -68.5, "left": -0.2, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 83.2,
+      "left": -138.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v-19.2", "h-336", "v38.4", "h28.8" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-38.4", "v-76.7" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-38.4", "v153.6", "h624", "v-211.2" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-28.8", "v125", "h604.8", "v-153.6" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h-19.2", "v105.9", "h585.6", "v-172.8" ] ],
+    [ "esp:34", "pot1:SIG", "green", [ "h-153.45", "v-67.2", "h-134.4" ] ],
+    [ "esp:15", "dht1:SDA", "green", [ "v0", "h220.8" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v-9.6", "h412.8", "v67.2" ] ]
+  ],
+  "dependencies": {}
+}
